@@ -19,29 +19,35 @@ class User:
 
         user = { }
         user[self.user_name] = dict( user_name = self.user_name, password = self.password, credentials = [] )
-        print('______________________ Successfully created an account for user {}. Do you want to save your progress? ______________________\n'.format(self.user_name))
-        return user
-
-
-
-    def save_user( self, user, user_name )
-        '''
-        '''
-
-        if user_name in self.users_list.keys( ):
-            print('!_______________________ Error saving user. The user name already exits. _______________________!\n')
+        print('\n______________________ Successfully created an account for user {}. ______________________\n'.format(self.user_name))
+        
+        if self.user_name in User.users_list.keys():
+            print('!_______________________ Error saving user. The user {} already exits. Try a different user name _______________________!\n'.format(self.user_name))
             return False
         else:
             self.users_list.update( user )
-            print('________________________ User account successfully saved. ________________________\n')
+            print('________________________ User {}\'s account has been successfully saved. ________________________\n'.format(self.user_name))
             return True
+
+
+
+
+
+    # def save_user( self, user, user_name ):
+    #     '''
+    #     '''
+
+    #     if user_name in User.users_list.keys():
+            
+    #     else:
+            
 
 
     def find_user_by_uname( self, user_name ):
         '''
         '''
         
-        users = self.users_list
+        users = User.users_list
         for key,value in users.items( ):
             if key == user_name:
                 print('___________________ Found user {} records ___________________\n'.format(user_name))
