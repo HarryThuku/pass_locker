@@ -58,3 +58,17 @@ def login():
                 print('\tIncorrect username or password. Try again\n')
 
 
+def create_account():
+    while True:
+        print('+++++++++++++++++++++++++++++++++ Create a new account +++++++++++++++++++++++++++++++++\n')
+        uname = input('Enter your preffered username : ')
+        pword =  input('Enter your preffered password : ')
+        conf_pass = input('Confirm password entry : ')
+        result = emptyChecker([uname,pword,conf_pass])
+
+        if result and pword == conf_pass:
+            new_account = User(uname,pword,[])
+            new_account.make_user_dict()
+            break
+            
+
