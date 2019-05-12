@@ -14,6 +14,12 @@ class User_test(unittest.TestCase):
         self.assertTrue(len(User.users_list),1)
 
     
+    def test_user_values(self):
+        self.assertTrue(self.new_user.user_name,'harry')
+        self.assertTrue(self.new_user.password,'kk')
+        self.assertEqual(self.new_user.credentials,[])
+    
+
 
 
 
