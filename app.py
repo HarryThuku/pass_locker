@@ -25,3 +25,19 @@ def login():
             if attempt_password == account['password']:
                 print('You are currently loged in as {}.\n'.format(username))
                 
+                while True:
+                    print('\n*_____________________ What would you like to do? _____________________*\n\na/A for add account credentials.\nb/B to list credentials.\nc/C to delete account.\nx/X to logout.')
+                    option = input('\nproceed with option? ')
+                    if  option == 'a':
+                        print('Let\'s add an account. You could read the documentation for further clarification at "www.google.com"')
+                        acc_name = input('Account name : ')
+                        acc_url = input('Account url : ')
+                        acc_pass = input('Account password : ')
+                        acc_conf_pass = input('Confirm password : ')
+                        results = emptyChecker([acc_conf_pass,acc_name,acc_pass,acc_url])
+                        if acc_conf_pass == acc_pass and results:
+                            new_credential = Credential(acc_name, acc_url, acc_pass)
+                            account['credentials'].append(new_credential)
+                            if len(account['credentials'],>=1):
+                                print('Successfully added your {}\'s credential to your credential list.\n'.format(acc_name))
+                    
