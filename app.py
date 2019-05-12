@@ -41,3 +41,20 @@ def login():
                             if len(account['credentials'],>=1):
                                 print('Successfully added your {}\'s credential to your credential list.\n'.format(acc_name))
                     
+                    elif option == 'b':
+                        for item in account['credentials']:
+                            print('\tYour {} account url is {}.\n'.format(item.cred_name,item.cred_url))
+                    
+                    elif option == 'c':
+                        pass
+                    
+                    elif option == 'x':
+                        print('loging out.')
+                        break
+                    
+                    else:
+                        print('Incorrect input. Please select from available inputs.')
+            else:
+                print('\tIncorrect username or password. Try again\n')
+
+
