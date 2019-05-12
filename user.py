@@ -12,6 +12,7 @@ class User:
         self.credentials = []
 
 
+
     def make_user_dict(self):
         '''
         '''
@@ -20,6 +21,7 @@ class User:
         user[self.user_name] = dict( user_name = self.user_name, password = self.password, credentials = [] )
         print('______________________ Successfully created an account for user {}. Do you want to save your progress? ______________________\n'.format(self.user_name))
         return user
+
 
 
     def save_user( self, user, user_name )
@@ -57,4 +59,13 @@ class User:
         return True
 
 
-    
+
+    def find_credential( self, user_account, credential_name ):
+        '''
+        '''
+
+        credentials = user_account[self.user_name]['credentials']
+        for credential in credentials:
+            if credential['cred_name'] == credential_name:
+                print('_________________________ Found your {} credentials _________________________\n'.format(credential_name))
+                return credential
