@@ -47,4 +47,14 @@ class User:
             else:
                 print('!__________________ User {} is not in our records. __________________!\n'.format(user_name))
 
+
+
+    def add_credential_to_user( self, credential, user ):
+        '''
+        '''
+
+        user[self.user_name]['credentials'].append( credential )
+        return True
+
+
     
