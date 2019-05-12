@@ -17,4 +17,11 @@ def login():
         print('__________________________________  __________________________________')
         username = input('Enter your username : ')
         account = main_user.find_user_by_uname(username)
-        print(account)
+
+
+        if account:
+            print('_____________________ Enter password for {}\'s account _____________________\n'.format(username))
+            attempt_password = input()
+            if attempt_password == account['password']:
+                print('You are currently loged in as {}.\n'.format(username))
+                
