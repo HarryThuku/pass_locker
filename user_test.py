@@ -5,7 +5,7 @@ class User_test(unittest.TestCase):
     def setUp(self):
         self.new_user = User('harry','kk',[])
     
-        def tearDown(self):
+    def tearDown(self):
         User.users_list = {}
 
 

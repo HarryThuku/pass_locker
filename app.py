@@ -29,31 +29,32 @@ def login():
                     print('\n*_____________________ What would you like to do? _____________________*\n\na/A for add account credentials.\nb/B to list credentials.\nc/C to delete account.\nx/X to logout.')
                     option = input('\nproceed with option? ')
                     if  option == 'a':
-                        print('Let\'s add an account. You could read the documentation for further clarification at "www.google.com"')
+                        print('\nLet\'s add an account. You could read the documentation for further clarification at "www.google.com"\n')
                         acc_name = input('Account name : ')
                         acc_url = input('Account url : ')
                         acc_pass = input('Account password : ')
-                        acc_conf_pass = input('Confirm password : ')
+                        acc_conf_pass =n input('Confirm password : ')
                         results = emptyChecker([acc_conf_pass,acc_name,acc_pass,acc_url])
                         if acc_conf_pass == acc_pass and results:
                             new_credential = Credential(acc_name, acc_url, acc_pass)
                             account['credentials'].append(new_credential)
-                            if len(account['credentials'],>=1):
+                            if len(account['crendentials'])>=1:
                                 print('Successfully added your {}\'s credential to your credential list.\n'.format(acc_name))
                     
                     elif option == 'b':
+                        print('\n\t^^^^^^^^^^ These are all accounts listed under you. ^^^^^^^^^^^\n')
                         for item in account['credentials']:
-                            print('\tYour {} account url is {}.\n'.format(item.cred_name,item.cred_url))
+                            print('\tYour {}\'s account url is {}.\n'.format(item.cred_name,item.cred_url))
                     
                     elif option == 'c':
                         pass
                     
                     elif option == 'x':
-                        print('loging out.')
+                        print('\nloging out.\n')
                         break
                     
                     else:
-                        print('Incorrect input. Please select from available inputs.')
+                        print('\n\tIncorrect input. Please select from available inputs.\n')
             else:
                 print('\tIncorrect username or password. Try again\n')
 
@@ -88,6 +89,7 @@ def app():
             create_account()
         
         elif entry == 'x':
+            print('\n............ Exiting system .........\n\n')
             break
         
         else:

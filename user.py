@@ -50,10 +50,10 @@ class User:
         users = User.users_list
         for key,value in users.items( ):
             if key == user_name:
-                print('___________________ Found user {} records ___________________\n'.format(user_name))
+                print('\n___________________ Found user {} records ___________________\n'.format(user_name))
                 return value
             else:
-                print('!__________________ User {} is not in our records. __________________!\n'.format(user_name))
+                print('\n!__________________ User {} is not in our records. __________________!\n'.format(user_name))
 
 
 
