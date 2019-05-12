@@ -22,4 +22,17 @@ class User:
         return user
 
 
+    def save_user( self, user, user_name )
+        '''
+        '''
+
+        if user_name in self.users_list.keys( ):
+            print('!_______________________ Error saving user. The user name already exits. _______________________!\n')
+            return False
+        else:
+            self.users_list.update( user )
+            print('________________________ User account successfully saved. ________________________\n')
+            return True
+
+
     
