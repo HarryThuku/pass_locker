@@ -35,4 +35,16 @@ class User:
             return True
 
 
+    def find_user_by_uname( self, user_name ):
+        '''
+        '''
+        
+        users = self.users_list
+        for key,value in users.items( ):
+            if key == user_name:
+                print('___________________ Found user {} records ___________________\n'.format(user_name))
+                return value
+            else:
+                print('!__________________ User {} is not in our records. __________________!\n'.format(user_name))
+
     
