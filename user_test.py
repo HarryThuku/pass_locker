@@ -19,7 +19,8 @@ class User_test(unittest.TestCase):
         self.assertTrue(self.new_user.password,'kk')
         self.assertEqual(self.new_user.credentials,[])
     
-
+    def test_find_user(self):
+        self.new_user.find_user_by_uname('harry')
 
 
 
