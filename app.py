@@ -72,3 +72,26 @@ def create_account():
             break
             
 
+def app():
+    '''
+    '''
+    while True:
+        print('Welcome to password locker. What would you like to do?\n- l/L to login.\n- s/S to signup.\n- x/X to exit system.')
+        entry = input('\nProceed to ? ')
+        if entry == 'l':
+            if User.users_list:
+                login()
+            else:
+                print('\nThere are no registered users yet. Register first before proceeding to signing in.\n')
+                create_account()
+        elif entry == 's':
+            create_account()
+        
+        elif entry == 'x':
+            break
+        
+        else:
+            print('Wrong choices. Please try again.')
+
+if __name__ == "__main__":
+    app()
